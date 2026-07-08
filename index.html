@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultor Automotivo - Francisco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="config-panel">
+        <h2>🚗 Painel do Consultor</h2>
+        <div class="form-group">
+            <label for="apiKey">OpenRouter API Key:</label>
+            <input type="password" id="apiKey" placeholder="sk-or-..." value="">
+        </div>
+        <div class="form-group">
+            <label for="systemPrompt">Diretrizes do Francisco (Prompt):</label>
+            <textarea id="systemPrompt" readonly></textarea>
+        </div>
+        <button onclick="clearChat()">Reiniciar Atendimento</button>
+    </div>
+
+    <div class="chat-panel">
+        <div class="chat-header">
+            <h3>Concessionária Virtual</h3>
+            <p style="font-size: 0.85rem; color: var(--text-light)">Fale com Francisco, seu consultor automotivo de confiança.</p>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message assistant">Olá! Sou o Francisco. É um grande prazer receber você aqui hoje. Me conte um pouco: que tipo de veículo você está procurando ou qual necessidade deseja suprir no seu dia a dia? Vamos encontrar a opção ideal juntos!</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Digite sua resposta aqui..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+</div>
+
+<script src="prompt.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
